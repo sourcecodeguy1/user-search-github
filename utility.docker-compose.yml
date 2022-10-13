@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  node:
+    build:
+      context: .
+      dockerfile: utility.Dockerfile
+    volumes:
+      - .:/app
+    stdin_open: true
+    tty: true

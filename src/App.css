@@ -1,0 +1,33 @@
+body{
+  font-family: "Space Mono",monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+}
+#devfinder{
+  color: #222731;
+  font-weight: bold;
+}
+#mdb-row{
+  padding-top: 150px;
+  text-align: center;
+  margin: auto;
+}
+#alert-message{
+  background-color: #f8d7da;
+  color: #b95657;
+  width: 39%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+#close-alert-box{
+  float: right;
+}
+#close-alert-box:hover{
+  cursor: pointer;
+}
+
+
+

@@ -1,0 +1,1 @@
+docker-compose -f utility.docker-compose.yml run --rm node "add" "dateformat"
