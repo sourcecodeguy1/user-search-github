@@ -48,6 +48,12 @@ export const SearchBarStyled = styeld.div`
         width: 100%;*/
    }
    
+   @media screen and (max-width: 500px){
+        #search-btn{
+            width: 35%;
+        }
+   }
+   
    #search-input{
         width: 100%;
    }
