@@ -7,15 +7,23 @@ const SearchBar = ({parentCallBack, lightBackground}) => {
     const [username, setUsername] = useState("");
 
     const handleChange = (e) => {
+        e.preventDefault();
         setUsername(e.target.value);
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = () => {
+        
         if(username !== "") {
             parentCallBack(username);
         } else {
             alert("Enter a github username.");
+        }
+    }
+
+    const handleKeyPress = (e) => {
+        if(e.key === "Enter"){
+            e.preventDefault();
+            handleSubmit();
         }
     }
 
@@ -28,7 +36,7 @@ const SearchBar = ({parentCallBack, lightBackground}) => {
                             <MDBInputGroup tag="form" className='d-flex mt-3 mb-3'>
                                 <SearchBarStyled>
                                     <div id={`search-icon`}><img src="/img/icon-search.svg" alt=""/></div>
-                                    <input style={{fontSize: `18px`}} onChange={handleChange} id={`search-input`} className={lightBackground === false ? "dark-background form-control text-light": "light-background form-control"} placeholder="Search GitHub username..." aria-label="Search" type='Search' />
+                                    <input onKeyPress={handleKeyPress} style={{fontSize: `18px`}} onChange={handleChange} id={`search-input`} className={lightBackground === false ? "dark-background form-control text-light": "light-background form-control"} placeholder="Search GitHub username..." aria-label="Search" type='Search' />
                                     <MDBBtn type={`button`} onClick={handleSubmit} id={`search-btn`} className={`col-md-2 col-sm-12`}>Search</MDBBtn>
                                 </SearchBarStyled>
                             </MDBInputGroup>
