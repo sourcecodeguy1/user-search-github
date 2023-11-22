@@ -38,5 +38,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "transform": {
+    "\\.[jt]sx?$": "babel-jest"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/(?!dateformat).+\\.js$"
+    ]
   }
 }

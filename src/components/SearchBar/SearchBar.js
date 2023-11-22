@@ -36,7 +36,7 @@ const SearchBar = ({parentCallBack, lightBackground}) => {
                             <MDBInputGroup tag="form" className='d-flex mt-3 mb-3'>
                                 <SearchBarStyled>
                                     <div id={`search-icon`}><img src="/img/icon-search.svg" alt=""/></div>
-                                    <input onKeyPress={handleKeyPress} style={{fontSize: `18px`}} onChange={handleChange} id={`search-input`} className={lightBackground === false ? "dark-background form-control text-light": "light-background form-control"} placeholder="Search GitHub username..." aria-label="Search" type='Search' />
+                                    <input role={`textbox`} onKeyDown={handleKeyPress} style={{fontSize: `18px`}} onChange={handleChange} id={`search-input`} className={lightBackground === false ? "dark-background form-control text-light": "light-background form-control"} placeholder="Search GitHub username..." aria-label="Search" type='Search' />
                                     <MDBBtn type={`button`} onClick={handleSubmit} id={`search-btn`} className={`col-md-2 col-sm-12`}>Search</MDBBtn>
                                 </SearchBarStyled>
                             </MDBInputGroup>

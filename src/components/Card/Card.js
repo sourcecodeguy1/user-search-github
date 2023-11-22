@@ -19,7 +19,7 @@ const Card = ({details, lightBackground}) => {
     let new_array = details.map(data => (
         //console.log(data),
         data_username =         data.length !== 0 ? data.login : "The Octocat",
-        data_created_at =       data.length !== 0 ? "Joined " + dateFormat(data.created_at, "mmm d, yyyy") : "Joined 25 Jan 2011",
+        data_created_at =       data.length !== 0 ? "Joined " + dateFormat(data.created_at, "mmm d, yyyy") : "Joined Jan 25, 2011",
         data_bio =              (data.length !== 0) ? data.bio : "This profile has no bio",
         data_repos =            data.length !== 0 ? data.public_repos : "8",
         data_followers =        data.length !== 0 ? data.followers : "3938",
@@ -35,12 +35,12 @@ const Card = ({details, lightBackground}) => {
         <>
             <MDBContainer id={`card-container`}>
                 <CardStyled>
-                    <MDBCard id={`card`} className={lightBackground === false ? "dark-background text-light": "light-background"}>
+                    <MDBCard data-testid="user-card" id={`card`} className={lightBackground === false ? "dark-background text-light": "light-background"}>
                         <MDBCardBody>
                             <MDBCardText>
                                 <MDBRow>
                                     <MDBCol id={`profile-image`} md={`12`} lg={`3`} className={`d-flex justify-content-center`}>
-                                        <img src={data_avatar_url} alt=""/>
+                                        <img src={data_avatar_url} alt="Profile image"/>
                                     </MDBCol>
                                     <MDBCol id={`top-content`} md={`12`} lg={`9`}>
                                         <MDBRow>
