@@ -1,4 +1,4 @@
-FROM node:18-slim as build
+FROM node:22-alpine as build
 
 WORKDIR /app
 
@@ -11,7 +11,7 @@ COPY . .
 RUN yarn run build
 
 # Production
-FROM nginx:1.17-alpine
+FROM nginx:alpine
 EXPOSE 8083
 RUN rm -rf /etc/nginx/conf.d/*
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
