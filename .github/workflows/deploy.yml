@@ -67,7 +67,13 @@ jobs:
             echo "Pulling versioned image for GitHub User Search..."
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKER_REPO }}:${GITHUB_SEARCH_TAG}
 
+            echo "Removing any stale containers..."
+            docker rm -f github_container 2>/dev/null || true
+
             echo "Restarting GitHub User Search service only..."
-            docker-compose up -d github
+            GITHUB_SEARCH_TAG=${GITHUB_SEARCH_TAG} docker compose up -d --force-recreate github
+
+            echo "Cleaning up old images..."
+            docker image prune -f
 
             echo "Deployment completed! ✅"
